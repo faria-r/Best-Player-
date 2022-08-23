@@ -25,3 +25,35 @@ const selectButtonsix = document.getElementById('sl-six').addEventListener('clic
 //     setListItem('firstPlayer');
 //     // event.selectButtonOne.disabled = true;
 // })
+
+
+
+
+
+
+//setting player name to the list container
+function setListItem(playerName){
+    const listContainer = document.getElementById('li-container');
+    
+    const li = document.createElement('li');
+    const PlayerNameElement = document.getElementById(playerName);
+    const liText = PlayerNameElement.innerText;
+    li.innerText = liText;
+    listContainer.appendChild(li);
+}
+//function to set eventlistener With buttons
+function setEventListener(buttonId,playerName){
+    document.getElementById(buttonId).addEventListener('click',function(event){
+        event.target.disabled = true;
+        event.target.style.backgroundColor = 'gray';
+        setListItem(playerName);
+//         const elements = document.getElementsByTagName('li');
+//     const numberOfPlayers = elements.length;
+//     if(numberOfPlayers > 5)
+//     {
+//        alert('You Can Not Add More Than Five Players.');
+//        return;
+//     }
+        
+//     })
+// }
