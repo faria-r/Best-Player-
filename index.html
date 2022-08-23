@@ -5,19 +5,22 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Players-Expense-summery</title>
+     <!-- custom css link  -->
+     <link rel="stylesheet" href="styles/style.css">
     <!-- tailwind link  -->
     <script src="https://cdn.tailwindcss.com"></script>
+   
 </head>
 <body class="bg-slate-900 ">
     <header>
-        <div class="mx-h-full py-52 bg-cover bg-no-repeat bg-fixed" style="background-image:url(images/R\ \(4\).jpg) ;">
+        <div id="heading" class="mx-h-full py-52 bg-cover bg-no-repeat bg-fixed" style="background-image: url(images/header.jpg);">
             <h1 class="text-7xl text-center text-amber-500 font-bold" >Your Favourite Players</h1>
         </div>
     </header>
     <main>
         <section class="my-16 ">
-           <div class=" flex mx-20">
-            <div class="grid grid-cols-3 grid-rows-2 gap-8 mx-5">
+           <div class="sm:block lg:flex mx-20">
+            <div class="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 grid-rows-2 gap-8 mx-5 md:w-50">
                 <div class="border w-64 h-80">
                     <div class="mb-4 mx-auto">
                         <img src="images/OIP (1).jpg" alt="" style="width: 100%;">
@@ -53,7 +56,7 @@
                     <h3 id= "fifthPlayer" class=" text-2xl text-center text-amber-500 font-bold mb-4">Cristiano Ronaldo</h3>
                     <button id="sl-five" class="px-16 py-2 bg-amber-700 mx-10 text-white font-semibold text-xl">Select</button>
                 </div>
-                <div class="border w-64 h-80">
+                <div class="border w-64 h-80 mb-5">
                    <div class="mb-4 mx-auto">
                         <img src="images/OIP (1).jpg" alt="" style="width: 100%;">
                     </div>
@@ -63,21 +66,20 @@
             
                 
             </div>
-            <div class="w-80 ">
-                <div class="border rounded-xl p-8 h-80">
+            <div class="md:mx-w-full lg:w-80 md:flex md:justify-evenly lg:block">
+                <div class="border rounded-xl p-8 sm:mx-h-full lg:h-80 lg:mx-auto">
                     <h2 class="text-white text-3xl text-center font-bold" >Selected-Five</h2>
-                    <ol id="li-container" type="1" start="1" class="text-center text-white p-8" >
-                    
+                    <ol id="li-container" type="1" start="1" class="text-center text-xl  text-amber-600 text-white p-8" >
                     </ol>
                 </div>
-                <div class="py-8 border rounded-xl mt-5">
+                <div class="md:w-96 lg:w-auto py-8 border rounded-xl sm:mt-8 lg:mt-5  lg:ml-0">
                     <h2 class="text-white text-3xl text-center font-bold mb-3" >Budget</h2>
                     <div class="text-center text-white">
                         <span class="text-xl mr-3">Per Player</span>
                     <input id="playerCost" type="text" class="py-2 bg-slate-900 border mb-4">
                     <button id="calcPlayerCost" class=" mb-4 px-24 py-2 bg-blue-600 font-semibold text-xl">Calculate</button>
                     <h4 class="text-xl mb-4">Player Expense <span class="ml-8">$<span id="PlayerExpense">0000</span></span></h4>
-                    <span class="text-xl mr-3">Manager</span>
+                    <span class="text-xl lg:mr-3">Manager</span>
                     <input id="manager-cost" type="text" class="py-2 bg-slate-900 border mb-4"> <br>
                     <span class="text-xl mr-8">Coach</span>
                      <input id="coach-cost" type="text" class="py-2 bg-slate-900 border mb-4"> <br>
