@@ -6,14 +6,14 @@ function setListItem(playerName){
     const liText = PlayerNameElement.innerText;
     li.innerText = liText;
     listContainer.appendChild(li);
-
-
-    // const listLength = document.getElementsById('li-container');
-    // const listNumber = listLength.document.getElementByTagName('li');
-  
-    // if(listNumber.length > 5){
-    //     alert('you can not add more the five player');
-    // }
+    const elements = document.getElementsByTagName('li');
+    const numberOfPlayers = elements.length;
+    if(numberOfPlayers > 5)
+    {
+       alert('You Can Not Add More Than Five Players.');
+       return;
+    }
+ 
 }
 //function to set eventlistener With buttons
 function setEventListener(buttonId,playerName){
@@ -29,6 +29,12 @@ function setTextElementValueById(elementId,value)
 {
 const elementField = document.getElementById(elementId);
 elementField.innerText = value;
+}
+function getElementsValueById(elementId){
+const elementField = document.getElementById(elementId);
+const elementFieldString =  elementField.value;
+const elementValue = parseInt(elementFieldString);
+return elementValue;
 }
 setEventListener('sl-one','firstPlayer');
 setEventListener('sl-Two','secondPlayer');
@@ -49,3 +55,13 @@ document.getElementById('calcPlayerCost').addEventListener('click',function(){
     setTextElementValueById('PlayerExpense',totalPlayerCost);
 
 })
+// setting the total cost 
+document.getElementById('total-cost').addEventListener('click',function(){
+    const managerCost = getElementsValueById('manager-cost');
+    const coachCost = getElementsValueById('coach-cost');
+    const playerTotalExpense = document.getElementById('PlayerExpense');
+    const playerTotalExpenseAmount = playerTotalExpense.innerText;
+    const playerTotalCost = parseInt(playerTotalExpenseAmount);
+    const totalCost = managerCost + coachCost + playerTotalCost;
+    setTextElementValueById('Total',totalCost);
+    })
